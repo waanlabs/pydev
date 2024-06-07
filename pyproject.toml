@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "pydev"
 version = "1.0.0"
-description = "Devcontainer setup for Python."
+description = "Devcontainer setup for Python developement."
 authors = ["waanlabs"]
 license = "MIT"
 readme = "README.md"
