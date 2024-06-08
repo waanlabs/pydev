@@ -13,12 +13,13 @@ LABEL license="MIT"
 # Custom settings.
 ARG USER=wired
 ARG PROJECT=pydev
+ARG TIMEZONE=America/New_York
 
 # Set non-interactive to avoid prompts during build.
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Set the timezone to America/New_York.
-ENV TZ=America/New_York
+ENV TZ=${TIMEZONE}
 
 # Install required packages.
 RUN apt-get update && \
@@ -57,7 +58,8 @@ ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 # Set the timezone to America/New_York. 
-RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \
+RUN ln -fs /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && \
+    echo "${TIMEZONE}" > /etc/timezone && \
     dpkg-reconfigure --frontend noninteractive tzdata
 
 # Create a non-root user, add to sudo group, and configure sudoers.
