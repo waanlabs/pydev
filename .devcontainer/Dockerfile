@@ -56,7 +56,7 @@ RUN sed -i '/^#.* en_US.UTF-8 UTF-8/s/^#//' /etc/locale.gen && \
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
-# Set the timezone to America/New_York.
+# Set the timezone to America/New_York. 
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \
     dpkg-reconfigure --frontend noninteractive tzdata
 
