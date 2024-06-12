@@ -20,5 +20,5 @@ jobs:
         uses: waanlabs/dockercheck@main
         with:
           path: ./.devcontainer
-          dockerfile_name: ""
+          dockerfile_name: Dockerfile
           build_args: "--no-cache"
