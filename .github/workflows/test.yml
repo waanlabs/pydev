@@ -16,5 +16,5 @@ jobs:
       - name: Test Docker Build Check
         uses: waanlabs/dockercheck@main
         with:
-          path: .devcontainer/Dockerfile
+          path: ./.devcontainer/Dockerfile
           build_args: "--no-cache"
