@@ -1,4 +1,4 @@
-name: Test Dockcheck Action
+name: Test Dockcheck Action with Security Scan
 
 on:
   push:
@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
-      - name: Test Docker Build Check
+      - name: Test Docker Build and Security Scan
         uses: waanlabs/dockercheck@main
         with:
-          path: .devcontainer/Dockerfile
+          path: ./.devcontainer  # Point to the directory containing the Dockerfile
           build_args: "--no-cache"
