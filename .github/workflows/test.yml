@@ -17,8 +17,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Test Docker Build and Security Scan
-        uses: waanlabs/dockcheck@main
+        uses: waanlabs/dockercheck@main
         with:
           path: ./.devcontainer
-          dockerfile_name: Dockerfile
+          dockerfile_name: ""
           build_args: "--no-cache"
