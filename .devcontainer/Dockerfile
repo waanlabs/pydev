@@ -44,9 +44,7 @@ RUN apt-get update && \
     xz-utils \
     tk-dev \
     libffi-dev \
-    liblzma-dev \
-    libssl-dev \
-    libffi-dev && \
+    liblzma-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
